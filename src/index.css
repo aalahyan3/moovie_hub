@@ -1,0 +1,238 @@
+@import "tailwindcss";
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+body{
+	font-family: "Quicksand", serif;
+	background-color: #001927;
+	background-size: cover;
+	background-repeat: no-repeat;
+	filter: brightness(100%);
+	color: #fff;
+}
+
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes TextFade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes corner-tr {
+    0% {
+        opacity: 0;
+		transform: translate(50%, -50%);
+    }
+    100% {
+        opacity: 1;
+		transform: translate(0, 0);
+    }
+}
+@keyframes from-top {
+    0% {
+        opacity: 0;
+		transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+		transform: translateY(0);
+    }
+}
+.year, .genre, .title, .rate, .booster img {
+    transition: opacity 1s ease, filter 0.5s ease, transform 0.5s ease ;
+
+}
+.booster:hover .genre
+{
+	opacity: 1;
+	display: flex;
+	animation: slideIn 0.5s ease-out forwards;
+}
+.booster:hover .title
+{
+	opacity: 1;
+	display: flex;
+	animation: TextFade 0.5s ease-out forwards;
+
+}
+
+.booster:hover .year {
+    opacity: 1;
+	display: block;
+	animation: corner-tr 0.5s ease-out forwards;
+
+}
+
+.booster:hover .rate{
+    opacity: 1;
+	display: flex;
+	animation: from-top 0.5s ease-out forwards;
+}
+
+.booster:hover .image{
+    filter: brightness(30%);
+    transform: scale(1.1);
+}
+
+::-webkit-scrollbar {
+    width: 10px; 
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #262626;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4f0019;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #27000c;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #f1f1f1;
+}
+@keyframes change-color {
+    0% {
+        background-color: #cecece;
+    }
+    50% {
+        background-color: #949494;
+    }
+    100%{
+        background-color: #cecece;
+    }
+}
+@keyframes keep-going {
+    0% {
+        transform: translate(-800px, 250px) rotate(-45deg);
+    }
+    100%{
+        transform: translate(100px, 250px) rotate(-45deg);
+
+    }
+}
+
+.skelton
+{    background-color: #9b9b9b;
+
+    /* animation: change-color 5s ease-out infinite; */
+    overflow: hidden;
+    max-width: 300px;
+
+}
+.skelton::after
+{
+    content: "";
+    width: 800px;
+    height: 50px;
+    /* box-shadow: 0px 0px 10px 10px #ffffff83; */
+    background: rgb(155,155,155);
+    background: linear-gradient(90deg, rgba(155,155,155,1) 0%, rgba(89,89,89,1) 44%, rgba(155,155,155,1) 100%);    position: absolute;
+    transform: translate(-150px, 250px) rotate(-45deg);
+    animation: keep-going 3s ease-out infinite;
+}
+@keyframes loader {
+    0% {
+        width: 0%;
+        opacity: 0;
+    }
+    100%{
+        width: 90%;
+        opacity: 1;
+    }
+}
+
+.animate-loader
+{
+    width: 90%;
+    margin-top: -5px;
+    height: 4 rem;
+    animation: loader 2s ease-out;
+}
+.backdrop::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(84, 84, 84, 0.026) 100%);
+    z-index: 1; /* Ensure it overlays the image */
+  }
+  
+  .backdrop img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 0;
+  }
+
+
+.overview::after{
+    content: 'Overview';
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    top: -15px;
+    left: 50px;
+    border-radius: 50px;
+    background-color: #152234;
+    text-align: center;
+    align-content: center;
+    border: 1px solid #ffffff38;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.name-prod-company {
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    background-color: #000000;
+    color: rgb(183, 183, 183);
+    text-align: center;
+    min-width: 100%;
+    width: fit-content;
+    text-wrap: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.prod-comp:hover .name-prod-company {
+    opacity: 1;
+    visibility: visible;
+}
+
+.prod-comp:hover{
+border: #fff 1px solid;
+box-shadow: 0 0 5px 5px #ffffff36;
+}
+
+
+.trailer-iframe{
+    aspect-ratio: 16 / 9;
+}
+  

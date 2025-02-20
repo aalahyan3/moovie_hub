@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Loader from './components/Loader'
 import MovieDetails from './components/MovieDetails'
 import Search from './components/Search'
-
+import { Analytics } from "@vercel/analytics/react"
 function App() {
 
   return (

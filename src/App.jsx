@@ -17,6 +17,7 @@ function App() {
       <Route path='/details/:id' element={<MovieDetails />}/>
       <Route path='/search' element={<Search />}/>
     </Routes>
+      <Analytics />
     </BrowserRouter>
   )
 }

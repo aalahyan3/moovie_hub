@@ -39,7 +39,6 @@ const Search = () =>
 	}
 	FetchSearchedData()
 	}, [query])
-	console.log(movies)
 	if(loading)
 	return(
 		<h1>loading...</h1>

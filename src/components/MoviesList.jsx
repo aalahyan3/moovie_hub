@@ -20,7 +20,6 @@ const MoviesList = () =>
 		const [tab, setTab] = useState("popular");
   		const [nbPages, setNbPages] = useState(1);
 		const api_key = import.meta.env.VITE_TMDB_API_KEY;
-		console.log(api_key);
 		  useEffect(()=>
 			{
 				const page = parseInt(searchParams.get("page")) || 1;
@@ -46,7 +45,6 @@ const MoviesList = () =>
 						setNbPages(res.data.total_pages <= 500 ? res.data.total_pages : 500)
 						setError(null);
 						await new Promise(resolve => setTimeout(resolve, 300));
-					console.log(res.data)
 				}
 				catch(err)
 				{

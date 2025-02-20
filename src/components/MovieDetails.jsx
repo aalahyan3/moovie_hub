@@ -90,7 +90,8 @@ const MovieDetails = ()=>
 				release_date={movie.release_date}
 				duration={movie.runtime}
 				/>
-				{movie.production_companies && movie.production_companies.lenght > 0 && <ProductionCompanies comps={movie.production_companies}/>}
+				{console.log(movie.production_companies)}
+				{movie.production_companies && movie.production_companies.length > 0 &&  <ProductionCompanies comps={movie.production_companies}/>}
 				<Trailer id={id} />
 				<Recomendations id={id}/>
 			</div>

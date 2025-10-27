@@ -17,9 +17,7 @@ function App() {
       <Route path='/details/:id' element={<MovieDetails />}/>
       <Route path='/search' element={<Search />}/>
     </Routes>
-      <div className="p-4 bg-black flex items-center justify-center font-mono mt-10">
-        <p>created by <a href="https://aalahyan3.tech">aalahyan3</a> </p>
-      </div>
+      
       <Analytics />
     </BrowserRouter>
   )
